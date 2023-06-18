@@ -1,0 +1,374 @@
+/* this is for font AR */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Tajawal&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: "Tajawal", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+header {
+  display: flex;
+  background: #e9e8e8;
+  height: 5rem;
+  margin-bottom: 10rem;
+  box-shadow: 0 0 30px #8888888d;
+}
+
+nav {
+  padding: 0 3rem 0 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  color: #fbbd06;
+  width: 100%;
+}
+
+nav .menu {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #a4993f;
+  font-weight: bold;
+}
+
+nav a:hover {
+  font-weight: bold;
+  color: #615a29;
+}
+
+/* homepage */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage .search {
+  display: flex;
+  gap: 1rem;
+}
+
+.tapfilter {
+  display: flex;
+  gap: 1rem;
+}
+
+.tapfilter a {
+  text-decoration: none;
+  border: #4b9608 1px solid;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+}
+
+.tapfilter a:hover {
+  background-color: #4b9608;
+  color: #e9e8e8;
+  font-weight: bold;
+}
+
+.search input {
+  width: 20rem;
+  display: flex;
+  background: #e9e8e8;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem;
+  border: #4b9608 1px solid;
+}
+
+.search button {
+  color: #a4993f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 3rem;
+  align-self: center;
+  border: #4b9608 1px solid;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.search button:hover {
+  background-color: #4b9608;
+  color: #e9e8e8;
+  font-weight: bold;
+}
+
+.homepage .image {
+  border-radius: 50%;
+  background: #89803d;
+}
+
+.homepage .cardHome {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #4b9608;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-right: 2rem;
+  gap: 1.5rem;
+}
+
+.Location {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+
+  gap: 1rem;
+}
+
+/* Stores */
+.homepage h1 {
+  margin-bottom: 3rem;
+}
+.imageStore img {
+  border-radius: 0.5rem;
+}
+
+.content a {
+  text-decoration: none;
+}
+
+/* Request Product */
+.AddProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #a4993f;
+}
+
+.AddProduct form {
+  box-shadow: 1px 1px 20px #8888888d;
+  border: 1px solid #4b9608;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 80svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.AddProduct form input {
+  border: #4b9608 1px solid;
+  border-radius: 5px;
+  margin: 1rem 0 1rem 0;
+  padding: 0.3rem;
+}
+
+.AddProduct form textarea {
+  border: #4b9608 1px solid;
+  border-radius: 5px;
+  margin: 1rem 0 1rem 0;
+  padding: 0.3rem;
+}
+/* Register */
+
+.registerParent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.register {
+  /* font-weight: bold; */
+  margin: 0 5rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  width: 34rem;
+  border-radius: 1rem;
+  padding: 5rem 5rem 5rem 5rem;
+  border: #4b9608 1px solid;
+  box-shadow: 1px 1px 20px #8888888d;
+  color: #a4993f;
+}
+
+.register h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.register label {
+  margin-top: 1rem;
+}
+.register input {
+  display: flex;
+  background: #e9e8e8;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border: #4b9608 1px solid;
+}
+
+.selecter {
+  margin-top: 3rem;
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.selecter select {
+  width: 5em;
+  height: 1.8rem;
+  border: #4b9608 1px solid;
+  border-radius: 5px;
+}
+.checkboxParent {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox label {
+  display: flex;
+}
+
+.submit_btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  margin: 3rem 0 3rem 0;
+}
+
+.submit_btn button {
+  color: #a4993f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17rem;
+  height: 3rem;
+  align-self: center;
+  border: #4b9608 1px solid;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submit_btn button:hover {
+  background-color: #4b9608;
+  color: #e9e8e8;
+  font-weight: bold;
+}
+
+.register p {
+  text-align: center;
+}
+
+.register a {
+  text-decoration: none;
+  color: #4d76ff;
+}
+
+.submit_btn a {
+  display: flex;
+  background: #4b9608;
+  border-radius: 15px;
+  padding: 0.3rem;
+  color: #fff;
+  width: 17rem;
+  height: 3rem;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+
+.register a:hover {
+  text-decoration: none;
+  color: #d6d6d6;
+  font-weight: bold;
+  font-size: large;
+}
+
+/*for pending*/
+.table th {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.table td {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.table tr {
+  display: flex;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: #e9e8e8;
+  height: 8rem;
+  font-size: 0.78rem;
+  box-shadow: 0 0 30px #8888888d;
+
+  margin-top: 10rem;
+}
+
+footer .terms {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.terms {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.terms a {
+  text-decoration: none;
+  color: #040404;
+}
+
+.terms a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #040404;
+}
