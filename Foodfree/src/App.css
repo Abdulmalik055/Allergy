@@ -25,7 +25,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 3rem;
-  color: #fbbd06;
   width: 100%;
 }
 
@@ -38,13 +37,13 @@ nav .menu {
 
 nav a {
   text-decoration: none;
-  color: #a4993f;
+  color: #4b9608;
   font-weight: bold;
 }
 
 nav a:hover {
   font-weight: bold;
-  color: #615a29;
+  color: #244a04;
 }
 
 /* homepage */
