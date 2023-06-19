@@ -2,8 +2,6 @@ import Bakery from "../assets/gluten-free-bakery.jpg";
 function Stores() {
   return (
     <div className="homepage">
-
-
       <h1>المتاجر</h1>
       <div className="cardHome">
         <div className="imageStore">
@@ -23,7 +21,6 @@ function Stores() {
         </div>
       </div>
 
-
       <div className="cardHome">
         <div className="imageStore">
           <img src={Bakery} width={500} />
@@ -59,8 +56,6 @@ function Stores() {
           <p>4km 15min</p>
         </div>
       </div>
-
-
     </div>
   );
 }

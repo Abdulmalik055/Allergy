@@ -31,6 +31,20 @@ function Community() {
               أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم.
             </p>
           </div>
+          <div className="commentDiv">
+            <label htmlFor="">التعليق : </label>
+            <textarea
+              name=""
+              id=""
+              cols="100"
+              rows="10"
+              placeholder="ضع تعليقك هنا"
+            ></textarea>
+            <div  className="submit_btn"> 
+
+            <button>إرسال</button>
+            </div>
+          </div>
 
           <div className="communityTolls">
             <a className="comment" href="#">
@@ -40,7 +54,13 @@ function Community() {
         </div>
       </div>
 
-
+      <div className="newSubjectBTN">
+        <div className="newSubjectChildrenBtn">
+          <a className="btnSub" href="/communityUpdate">
+            اضافة موضوع +
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
