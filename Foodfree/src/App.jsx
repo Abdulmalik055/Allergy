@@ -10,12 +10,14 @@ import AddProduct from "./Components/addProduct";
 import Pending from "./Components/pending";
 import Profile from "./Components/Profile";
 import ProfileUpdate from "./Components/ProfileUpdate";
+import Community from "./Components/Community";
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
+        <Route path="community" element={<Community/>} ></Route>
         <Route path="profile" element={<Profile/>}></Route>
         <Route path="profileUpdate" element={<ProfileUpdate/>}></Route>
         <Route path="pending" element={<Pending/>}></Route>

@@ -336,6 +336,80 @@ nav a:hover {
   display: flex;
 }
 
+
+
+/* For Community */
+.community{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  border: #4b9608;
+}
+
+.communityChilled {
+  box-shadow: 0 0 30px #8888888d;
+  display: flex;
+  gap: 5rem;
+  flex-direction: column  ;
+  justify-content: center;
+  padding: 2rem;
+  margin: 1.5rem 0 2rem 0;
+  width: 70%;
+}
+
+.communityTolls{
+  display: flex;
+  gap: 3rem;
+}
+.communityChilled h1{
+  display: flex;
+  margin-bottom:3rem ;
+  font-size: 30px;
+}
+
+
+
+.communityTolls .comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  width: 5rem;
+  border-radius: 10px;
+  border: #4b9608 solid 1px;
+}
+
+.communityTolls .comment:hover{
+  background-color: #4b9608;
+  color: #e9e8e8;
+  font-weight: bold;
+}
+
+.newSubject {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.newSubject button{
+  display: flex;
+  background: green;
+}
+
+.newSubjectChilled { 
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  width: 70%;
+  border: #040404 solid 1px;
+}
+
+
+
 footer {
   display: flex;
   flex-direction: column;
