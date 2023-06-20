@@ -9,26 +9,29 @@ function LoginAdmin() {
 
   function submit(event) {
     event.preventDefault();
-    axios
-      .post("https://food-free.onrender.com/AdminRouter/Adminlogin", {
+    axios.post("https://food-free.onrender.com/AdminRouter/Adminlogin",{
         AdminPassword,
         AdminEmail,
       })
       .then((res) => {
         console.log(res);
-        localStorage.removeItem("token");
-        localStorage.setItem("token", res.data.token);
-        localStorage.removeItem("FullAdminName");
-        localStorage.setItem("FullAdminName", res.data.Admin.FullAdminName);
-        localStorage.removeItem("AdminEmail");
-        localStorage.setItem("AdminEmail", res.data.Admin.AdminEmail);
-        localStorage.removeItem("id");
-        localStorage.setItem("id", res.data.Admin._id);
+        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('FullAdminName' ,res.data.Admin.FullAdminName)
+        localStorage.setItem('AdminEmail', res.data.Admin.AdminEmail)
+        localStorage.setItem('id', res.data.Admin._id)
         console.log(res.data.Admin._id);
         console.log(res.data.Admin.AdminEmail);
-      });
+        
+        if(res.data.Admin._id){
+            Navigate("/pending");
+        }
+      }).catch((err) => {
+        document.getElementById('adminNotFound').style.display = 'block'
+      })
 
-    Navigate("/pending");
+      
+
+    
   }
 
   return (
@@ -36,7 +39,7 @@ function LoginAdmin() {
       <div>
         <div className="registerParent">
           <form onSubmit={submit} className="register">
-            <h1>تسجيل دخول المسؤول</h1>
+            <h1>تسجيل دخول</h1>
 
             <label>الإيميل الالكتروني :</label>
             <input
@@ -47,7 +50,7 @@ function LoginAdmin() {
             />
             <label>كلمة المرور : </label>
             <input
-              type="password"
+              type="text"
               placeholder="كلمة المرور ..."
               value={AdminPassword}
               onChange={(e) => setPassword(e.target.value)}
@@ -55,6 +58,7 @@ function LoginAdmin() {
 
             <div className="submit_btn">
               <button>دخول</button>
+              <p id="adminNotFound">معلومات التسجيل خاطئة</p>
             </div>
             <p>
               إنشاء حساب؟ <a href="/register"> تسجيل </a>

@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function AddProduct() {
@@ -19,22 +19,18 @@ function AddProduct() {
       .filter(([_, isChecked]) => isChecked)
       .map(([allergen, _]) => allergen);
   
-    const formData = {
-      productName,
-      productDescription,
-      isAllergic,
-      allergens: checkedAllergens,
-    };
+
     const header = `Authorization:Bearer ${localStorage.getItem('token')}`
-    console.log(formData);
-    try { 
+    console.log(checkedAllergens);
+    try {
       const response = await axios.post("https://food-free.onrender.com/UserRouter/RequestFoodFree", {
-        headers:header,
-        Food_Free_Data: productName,
+        headers: header,
+        Food_Free_Name: productName,
         FoodDescription: productDescription,
-        
+        AllergyStatus: isAllergic,
+        FoodType: checkedAllergens
       });
-      console.log(response.data);
+      console.log(response);
     } catch (error) {
       console.error("Error submitting form data:", error);
     }

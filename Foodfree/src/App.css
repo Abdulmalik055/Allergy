@@ -205,7 +205,14 @@ nav a:hover {
   border: #4b9608 1px solid;
   box-shadow: 1px 1px 20px #8888888d;
 }
-
+#userNotFound{
+  padding-block-start: 1rem;
+  display: none;
+}
+#adminNotFound{
+  padding-block-start: 1rem;
+  display: none;
+}
 .register {
   /* font-weight: bold; */
   display: flex;
@@ -336,6 +343,7 @@ nav a:hover {
 
 .submit_btn {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 100%;

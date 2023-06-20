@@ -9,33 +9,38 @@ function Login() {
 
   function submit(event) {
     event.preventDefault();
-    axios
-      .post("https://food-free.onrender.com/UserRouter/Userlogin", {
+    axios.post("https://food-free.onrender.com/UserRouter/Userlogin",{
         UserPassword,
         UserEmail,
       })
       .then((res) => {
         console.log(res);
-        localStorage.removeItem("token");
-        localStorage.removeItem("FullUserName");
-        localStorage.removeItem("UserEmail");
-        localStorage.removeItem("id");
-
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("FullUserName", res.data.user.FullUserName);
-        localStorage.setItem("UserEmail", res.data.user.UserEmail);
-        localStorage.setItem("id", res.data.user._id);
+        localStorage.removeItem('token')
+        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('FullUserName' ,res.data.user.FullUserName)
+        localStorage.setItem('UserEmail', res.data.user.UserEmail)
+        localStorage.setItem('id', res.data.user._id)
         console.log(res.data.user._id);
         console.log(res.data.user.UserEmail);
         
-        if (res.data.user._id) {
+        if(res.data.user._id){
           Navigate("/");
-        } 
-      });
+        }else{
+
+        }
+      }).catch((err) => {
+        console.log('1');
+        document.getElementById('userNotFound').style.display = 'block'
+
+      })
+
+
+
+    
   }
 
   return (
-    <div>
+    <div id="test">
       <div>
         <div className="registerParent">
           <form onSubmit={submit} className="register">
@@ -50,7 +55,7 @@ function Login() {
             />
             <label>كلمة المرور : </label>
             <input
-              type="password"
+              type="text"
               placeholder="كلمة المرور ..."
               value={UserPassword}
               onChange={(e) => setPassword(e.target.value)}
@@ -58,10 +63,12 @@ function Login() {
 
             <div className="submit_btn">
               <button>دخول</button>
+              <p id="userNotFound">معلومات التسجيل خاطئه</p>
             </div>
             <p>
               إنشاء حساب؟ <a href="/register"> تسجيل </a>
             </p>
+            
           </form>
         </div>
       </div>
