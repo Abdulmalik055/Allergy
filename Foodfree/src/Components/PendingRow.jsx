@@ -17,7 +17,7 @@ function PendingRow(props) {
     console.log(props.id +"cc");
     const id2 = props.id;
     
-     axios.delete(`http://localhost:8000/FoodFreeRouter/DeleteFoodFree/${id2}`,{
+     axios.delete(`https://food-free.onrender.com/FoodFreeRouter/DeleteFoodFree/${id2}`,{
       headers: {
         // return { Authorization: 'Bearer ' + user.accessToken };
        authorization: 'Bearer '+  localStorage.getItem("token"),
