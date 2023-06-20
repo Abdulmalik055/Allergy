@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import axios from "axios";
 
 function AddProduct() {
@@ -21,7 +21,6 @@ function AddProduct() {
   
 
     const header = `Authorization:Bearer ${localStorage.getItem('token')}`
-    console.log(checkedAllergens);
     try {
       const response = await axios.post("https://food-free.onrender.com/UserRouter/RequestFoodFree", {
         headers: header,
@@ -30,7 +29,7 @@ function AddProduct() {
         AllergyStatus: isAllergic,
         FoodType: checkedAllergens
       });
-      console.log(response);
+      console.log(response.data);
     } catch (error) {
       console.error("Error submitting form data:", error);
     }
