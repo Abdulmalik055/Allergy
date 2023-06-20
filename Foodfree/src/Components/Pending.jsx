@@ -25,7 +25,7 @@ function Pending() {
   console.log(localStorage.getItem("token"));
 
    // Redirect to the other page.
-   const url = "http://localhost:8000/FoodFreeRouter/ListFoodfree"
+   const url = "https://food-free.onrender.com/FoodFreeRouter/ListFoodfree"
  
    React.useEffect(() => {
       axios.get(url,{
