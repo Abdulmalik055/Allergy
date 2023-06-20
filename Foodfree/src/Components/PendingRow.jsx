@@ -42,7 +42,7 @@ function PendingRow(props) {
     setRequestStatus("true");
     console.log(props.id +"cc");
     const id2 = props.id;
-await axios.post(`http://localhost:8000/FoodFreeRouter/FoodFreeUpdate/${id2}`, {
+await axios.post(`https://food-free.onrender.com/FoodFreeRouter/FoodFreeUpdate/${id2}`, {
 
 headers: {
   // return { Authorization: 'Bearer ' + user.accessToken };
