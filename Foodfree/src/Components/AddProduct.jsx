@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import axios from "axios";
 
 function AddProduct() {
@@ -25,9 +25,15 @@ function AddProduct() {
       isAllergic,
       allergens: checkedAllergens,
     };
-
+    const header = `Authorization:Bearer ${localStorage.getItem('token')}`
+    console.log(formData);
     try { 
-      const response = await axios.post("https://food-free.onrender.com/RequestFoodFree", formData);
+      const response = await axios.post("https://food-free.onrender.com/UserRouter/RequestFoodFree", {
+        headers:header,
+        Food_Free_Data: productName,
+        FoodDescription: productDescription,
+        
+      });
       console.log(response.data);
     } catch (error) {
       console.error("Error submitting form data:", error);

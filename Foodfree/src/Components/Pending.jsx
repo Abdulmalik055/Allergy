@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   // Box,
   TableContainer,
@@ -8,13 +7,15 @@ import {
   Th,
   Tr,
   Tbody,
-  // Td,
+  Td,
   Table,
-  // Button,
-  // ButtonGroup,
+  Button,
+  ButtonGroup,
   Box
 } from "@chakra-ui/react";
 import PendingRow from './PendingRow';
+import axios from 'axios';
+
 
 function Pending() {
 
@@ -25,10 +26,16 @@ function Pending() {
   }, []);
 
   const fetchData = async () => {
+    const header = `Authorization:Bearer ${localStorage.getItem('token')}`
     try {
-      const response = await axios.get('https://6486d1bcbeba6297278f395e.mockapi.io/Login');
-      setData(response.data);
-      console.log(response.data);
+      const response = await axios.get('https://food-free.onrender.com/FoodFreeRouter/ListFoodfree', {
+        headers: header
+      });
+      console.log(response);
+      if(!response.data.errorMessage){
+        setData(response.data);
+      }
+      
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -48,13 +55,13 @@ function Pending() {
             </Thead>
             <Tbody>
             {data.map((item, index) => (
-              
+              <div>
                 <PendingRow
                   key={index}
                   productName={item.id}
                   productNumber={item.name}
                 />
-
+              </div>
 
           ))}
             </Tbody>

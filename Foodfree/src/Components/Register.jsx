@@ -9,7 +9,7 @@ function Register() {
   const [UserEmail, setEmail] = useState("");
   const [haveAllergy, setHaveAllergy] = useState(false);
   // const [UserfoodType, setType] = useState([]);
-  const [allergens, setAllergens] = useState({
+  const [UserFoodFreetype, setAllergens] = useState({
     gluten: false,
     milk: false,
     egg: false,
@@ -21,7 +21,7 @@ function Register() {
     event.preventDefault();
 
     //  ========= | to array | =========
-    const checkedAllergens = Object.entries(allergens)
+    const checkedAllergens = Object.entries(UserFoodFreetype)
     .filter(([_, isChecked]) => isChecked)
     .map(([allergen, _]) => allergen);
 
@@ -31,7 +31,7 @@ function Register() {
         UserPassword,
         UserEmail,
         haveAllergy,
-        allergens : checkedAllergens,
+        UserFoodFreetype : checkedAllergens,
       })
       .then((res) => {
         console.log(res);
@@ -42,7 +42,7 @@ function Register() {
   }
     // this is for checkbox
   const handleAllergenChange = (e) => {
-    setAllergens({ ...allergens, [e.target.name]: e.target.checked });
+    setAllergens({ ...UserFoodFreetype, [e.target.name]: e.target.checked });
   };
 
   return (
@@ -60,7 +60,7 @@ function Register() {
             />
             <label>كلمة المرور : </label>
             <input
-              type="text"
+              type="password"
               placeholder="كلمة المرور ..."
               value={UserPassword}
               onChange={(e) => setPassword(e.target.value)}
@@ -90,7 +90,7 @@ function Register() {
                 <input
                   type="checkbox"
                   name="gluten"
-                  checked={allergens.gluten}
+                  checked={UserFoodFreetype.gluten}
                   onChange={handleAllergenChange}
                 />
                 <label htmlFor="">جلوتين</label>
@@ -98,7 +98,7 @@ function Register() {
                 <input
                   type="checkbox"
                   name="milk"
-                  checked={allergens.milk}
+                  checked={UserFoodFreetype.milk}
                   onChange={handleAllergenChange}
                 />
                 <label htmlFor="">حليب</label>
@@ -106,7 +106,7 @@ function Register() {
                 <input
                   type="checkbox"
                   name="egg"
-                  checked={allergens.egg}
+                  checked={UserFoodFreetype.egg}
                   onChange={handleAllergenChange}
                 />
                 <label htmlFor="">بيض</label>
@@ -114,7 +114,7 @@ function Register() {
                 <input
                   type="checkbox"
                   name="fish"
-                  checked={allergens.fish}
+                  checked={UserFoodFreetype.fish}
                   onChange={handleAllergenChange}
                 />
                 <label htmlFor="">سمك</label>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Sandwich from "../assets/sandwich.png";
 import axios from 'axios';
 import Card from './FoodCard';
@@ -13,9 +13,14 @@ function Homepage() {
   }, []);
 
   const fetchData = async () => {
+    const header = `Authorization:Bearer ${localStorage.getItem('token')}`
     try {
-      const response = await axios.get('https://6486d1bcbeba6297278f395e.mockapi.io/Login');
-      setData(response.data);
+      const response = await axios.get('https://food-free.onrender.com/UserRouter/ListAllFoodfreeforalluser',{
+        headers: header
+      });
+      if(!response.data.errorMessage){
+        setData(response.data.FoodFreeData);
+      }
       console.log(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -40,10 +45,9 @@ function Homepage() {
           {data.map((item, index) => (
             <Card
               key={index}
-              productName={item.id}
-              productNumber={item.name}
-              storeLocation={item.password}
-              distance={item.distance}
+              productName={item._id}
+              productNumber={item.Food_Free_Name}
+
             />
           ))}
         </div>

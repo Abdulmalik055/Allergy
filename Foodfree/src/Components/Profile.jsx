@@ -1,9 +1,18 @@
 function Profile() {
   return (
     <div>
-      <div>
-        <div className="registerParent">
-          <form className="register">
+      <div className="profileParent">
+        <div>
+          <div className="profileMenu">
+            <div>
+            <button>معلومات الحساب</button>
+            <button>المفضلة</button>
+            <button>حذف الحساب</button>
+            </div>
+          </div>
+          <div className="profile">
+
+          <form>
             <h1>الملف الشخصي</h1>
             <label>الاسم المستخدم : </label>
             <h2>username</h2>
@@ -24,6 +33,7 @@ function Profile() {
               <a href="/profileUpdate" className="edit"> تعديل </a>
             </div>
           </form>
+          </div>
         </div>
       </div>
     </div>
