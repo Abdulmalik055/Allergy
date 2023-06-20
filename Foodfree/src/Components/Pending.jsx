@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   // Box,
   TableContainer,
@@ -6,14 +8,32 @@ import {
   Th,
   Tr,
   Tbody,
-  Td,
+  // Td,
   Table,
-  Button,
-  ButtonGroup,
+  // Button,
+  // ButtonGroup,
   Box
 } from "@chakra-ui/react";
+import PendingRow from './PendingRow';
 
 function Pending() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://6486d1bcbeba6297278f395e.mockapi.io/Login');
+      setData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   return (
     <>
       <Box>
@@ -27,16 +47,16 @@ function Pending() {
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td>
-                  <ButtonGroup variant="outline" spacing="6">
-                    <Button colorScheme="blue">قبول</Button>
-                    <Button colorScheme="red">رفض</Button>
-                  </ButtonGroup>
-                </Td>
-              </Tr>
+            {data.map((item, index) => (
+              
+                <PendingRow
+                  key={index}
+                  productName={item.id}
+                  productNumber={item.name}
+                />
+
+
+          ))}
             </Tbody>
           </Table>
         </TableContainer>
