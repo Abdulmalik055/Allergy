@@ -113,8 +113,10 @@ nav a:hover {
 }
 
 .homepage .image {
-  border-radius: 50%;
-  background: #89803d;
+  border-radius: 15%;
+  padding: 1.5rem;
+  background: #f2f3f3;
+  border: #4b9608 1px solid;
 }
 
 .Card {

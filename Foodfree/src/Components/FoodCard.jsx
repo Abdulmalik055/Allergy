@@ -1,5 +1,5 @@
 // import React from 'react';
-import Sandwich from "../assets/sandwich.png";
+import Sandwich from "../assets/logo.png";
 function Card(props) {
   return (
     <div className="Card">
