@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Sandwich from "../assets/logo.png";
+import Sandwich from "../assets/sandwich.png";
 import axios from 'axios';
 import Card from './FoodCard';
 
