@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 function AddProductAdmin() {
   const Navigate = useNavigate();
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [isAllergic, setIsAllergic] = useState("");
+  const [BarcodeID , setBarcodeID] = useState('')
   const [allergens, setAllergens] = useState({
     gluten: false,
     milk: false,
@@ -16,29 +16,33 @@ function AddProductAdmin() {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Create an array of checked allergens
     const checkedAllergens = Object.entries(allergens)
       .filter(([_, isChecked]) => isChecked)
       .map(([allergen, _]) => allergen);
-  
 
-      const header = `Authorization:Bearer ${localStorage.getItem('token')}`
-      try {
-        const response = await axios.post("https://food-free.onrender.com/FoodFreeRouter/AddnewFoodFree", {
+    const header = `Authorization:Bearer ${localStorage.getItem("token")}`;
+    try {
+      const response = await axios.post(
+        "https://food-free.onrender.com/FoodFreeRouter/AddnewFoodFree",
+        {
           Food_Free_Name: productName,
           FoodDescription: productDescription,
           AllergyStatus: isAllergic,
           FoodType: checkedAllergens,
-        },{
-          headers: {Authorization:header},
-        });
-        if(response.data.Data){
-          Navigate("/");
+          BarcodeID,
+        },
+        {
+          headers: { Authorization: header },
         }
-      } catch (error) {
-        console.error("Error submitting form data:", error);
+      );
+      if (response.data.Data) {
+        Navigate("/");
       }
+    } catch (error) {
+      console.error("Error submitting form data:", error);
+    }
   };
 
   const handleAllergenChange = (e) => {
@@ -54,6 +58,13 @@ function AddProductAdmin() {
           placeholder="أدخل اسم المنتج"
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
+        />
+        <label>رقم الباركود:</label>
+        <input
+          type="text"
+          placeholder="أدخل رقم باركود المنتج"
+          value={BarcodeID}
+          onChange={(e) => setBarcodeID(e.target.value)}
         />
         <label>وصف المنتج:</label>
         <textarea

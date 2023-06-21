@@ -28,6 +28,14 @@ function Login() {
       
       if(res.data.user._id){
         Navigate("/");
+        const btnLogged = document.createElement('button')
+        btnLogged.onclick = handelLogout.bind()
+        btnLogged.className = 'btn-logout' 
+        document.getElementById('notLoggedIn').replaceWith(btnLogged)
+        
+
+        // <button onClick={handelLogout} className="btn-logout"> Logout </button>
+
         // setLogin(true)
         }
         // else{

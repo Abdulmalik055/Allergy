@@ -17,28 +17,42 @@ function ProfileUpdate() {
   });
 
   console.log(FullUserName);
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
-
+    const header = `Authorization:Bearer ${localStorage.getItem("token")}`;
+    const id = localStorage.getItem("id");
     //  ========= | to array | =========
     const checkedAllergens = Object.entries(UserFoodFreetype)
       .filter(([_, isChecked]) => isChecked)
       .map(([allergen, _]) => allergen);
 
-    axios
-      .post("https://food-free.onrender.com/UserRouter/updateUser", {
+    const res = await axios.post(
+      `https://food-free.onrender.com/UserRouter/updateUser`,
+      {
         FullUserName,
         UserPassword,
         UserEmail,
         haveAllergy,
         UserFoodFreetype: checkedAllergens,
-      })
-      .then((res) => {
-        console.log(res);
-        localStorage.setItem("id", res.data.id);
-      });
+      },
+      {
+        headers: { Authorization: header },
+      }
+    );
+    console.log(res);
+    if(res.data.Message == 'record Updated in DB'){
 
-    Navigate("/");
+      localStorage.removeItem('FullUserName')
+      localStorage.removeItem('UserEmail')
+      localStorage.removeItem('haveAllergy')
+      localStorage.removeItem('UserFoodFreetype')
+      
+      localStorage.setItem('FullUserName' ,FullUserName)
+      localStorage.setItem('UserEmail',UserEmail)
+      localStorage.setItem('haveAllergy' ,haveAllergy)
+      localStorage.setItem('UserFoodFreetype',checkedAllergens)
+      Navigate("/profile");
+    }
   }
   // this is for checkbox
   const handleAllergenChange = (e) => {
@@ -123,7 +137,6 @@ function ProfileUpdate() {
             <div className="submit_btn">
               <button>تعديل</button>
             </div>
-
           </form>
         </div>
       </div>

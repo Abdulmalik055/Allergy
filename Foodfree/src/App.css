@@ -67,13 +67,17 @@ nav a:hover {
   gap: 1rem;
 }
 
-.tapfilter a {
+.tapfilter button {
   text-decoration: none;
   border: #4b9608 1px solid;
   border-radius: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0.2rem;
+}
+.filterActive{
+  background-color: #4b9608;
+  color: #fff;
 }
 
 .tapfilter a:hover {
@@ -136,6 +140,10 @@ nav a:hover {
   align-items: start;
   margin-right: 2rem;
   gap: 1.5rem;
+}
+
+.content > h3{
+  font-size: 20px;
 }
 
 .Location {

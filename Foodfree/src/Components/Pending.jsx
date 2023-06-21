@@ -1,4 +1,4 @@
-import { useState, useEffect,useNavigate } from 'react';
+import { useState, useEffect } from 'react';
 import {
   // Box,
   TableContainer,
@@ -55,20 +55,17 @@ function Pending() {
                 <Th>الإجراء</Th>
               </Tr>
             </Thead>
-            <Tbody>
+            <Tbody id='pendingTbody'>
             {data.map((item, index) => (
-              <div>
                 <PendingRow
                   key={index}
+                  rowID={item._id}
                   productName={item.Food_Free_Name}
                   productNumber={item.FoodDescription}
                   accept={'accept'}
                   deny={'deny'}
-                  dele={'dele'}
-                  id={item._id}
                   data={item}
                 />
-              </div>
 
           ))}
             </Tbody>

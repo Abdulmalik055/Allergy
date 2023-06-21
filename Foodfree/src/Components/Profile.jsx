@@ -1,13 +1,9 @@
 function Profile() {
+  let allergyType = "لا";
 
-
-  let allergyType = 'لا'
-  
-    if (localStorage.getItem("haveAllergy") === "true") {
-      allergyType = 'نعم'
-    }
-  
- 
+  if (localStorage.getItem("haveAllergy") === "true") {
+    allergyType = "نعم";
+  }
 
   return (
     <div>
@@ -28,18 +24,16 @@ function Profile() {
               <label>الإيميل الالكتروني :</label>
               <h2>{window.localStorage.getItem("UserEmail")}</h2>
               <div className="selecter">
-                هل أنت مصاب بحساسية :
-                <h2>{allergyType}</h2>
+                هل أنت مصاب بحساسية :<h2>{allergyType}</h2>
               </div>
               <div className="checkboxParent">
                 حدد الحساسية المصاب بها :
                 <div className="checkbox">
-                  <h2>{localStorage.getItem("")}</h2>
+                  <h2>{localStorage.getItem("UserFoodFreetype")}</h2>
                 </div>
               </div>
               <div className="submit_btn">
                 <a href="/profileUpdate" className="edit">
-                  
                   تعديل
                 </a>
               </div>

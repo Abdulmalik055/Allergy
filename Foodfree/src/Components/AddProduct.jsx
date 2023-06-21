@@ -8,6 +8,7 @@ function AddProduct() {
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [isAllergic, setIsAllergic] = useState("");
+  const [BarcodeID , setBarcodeID] = useState('')
   const [allergens, setAllergens] = useState({
     gluten: false,
     milk: false,
@@ -30,6 +31,7 @@ function AddProduct() {
         FoodDescription: productDescription,
         AllergyStatus: isAllergic,
         FoodType: checkedAllergens,
+        BarcodeID
       },{
         headers: {Authorization:header},
       });
@@ -54,6 +56,13 @@ function AddProduct() {
           placeholder="أدخل اسم المنتج"
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
+        />
+        <label>رقم الباركود:</label>
+        <input
+          type="text"
+          placeholder="أدخل رقم باركود المنتج"
+          value={BarcodeID}
+          onChange={(e) => setBarcodeID(e.target.value)}
         />
         <label>وصف المنتج:</label>
         <textarea

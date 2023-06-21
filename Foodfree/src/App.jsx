@@ -14,9 +14,10 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
-import LoginAdmin from './Components/LoginAdmin'
+import LoginAdmin from "./Components/LoginAdmin"
 import Homepage from "./Components/Homepage";
 import Stores from "./Components/Stores";
+import AddProductAdmin from "./Components/AddProductAdmin";
 {
   /* this component for Location Stores*/
 }
@@ -47,16 +48,17 @@ function App() {
       {/* =========== || all Routes || =========== */}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
-        <Route path="loginAdmin" element={<LoginAdmin/>}></Route>
         <Route path="community" element={<Community />}></Route>
         <Route path="communityUpdate" element={<NewSub />}></Route>
         <Route path="profile" element={<Profile />}></Route>
         <Route path="profileUpdate" element={<ProfileUpdate />}></Route>
         <Route path="pending" element={<Pending />}></Route>
         <Route path="addProduct" element={<AddProduct />}></Route>
+        <Route path="addProductAdmin" element={<AddProductAdmin/>}></Route>
         <Route path="stores" element={<Stores />}></Route>
         <Route path="register" element={<Register />}></Route>
         <Route path="login" element={<Login />}></Route>
+        <Route path="admin" element={<LoginAdmin/>}></Route>
       </Routes>
       {/* =========== || all Routes || =========== */}
 
