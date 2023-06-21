@@ -6,7 +6,7 @@ function Login() {
 
   const [UserPassword, setPassword] = useState("");
   const [UserEmail, setEmail] = useState("");
-  const [login, setLogin] = useState(localStorage.getItem("loged") === 'true')
+  // const [login, setLogin] = useState(localStorage.getItem("loged") === 'true')
 
   function submit(event) {
     event.preventDefault();
@@ -26,7 +26,7 @@ function Login() {
       
       if(res.data.user._id){
         Navigate("/");
-        setLogin(true)
+        // setLogin(true)
         }
         // else{
 
