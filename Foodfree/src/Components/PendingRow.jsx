@@ -32,7 +32,7 @@ function PendingRow(props) {
       //const splitId = id.target.id.split('_')
       //  const id2 = splitId[1]
 
-       axios.delete(`http://localhost:8000/FoodFreeRouter/DeleteFoodFree/${props.data._id}`,{
+       axios.delete(`https://food-free.onrender.com/FoodFreeRouter/DeleteFoodFree/${props.data._id}`,{
         headers: {
           // return { Authorization: 'Bearer ' + user.accessToken };
          authorization: 'Bearer '+  localStorage.getItem("token"),
