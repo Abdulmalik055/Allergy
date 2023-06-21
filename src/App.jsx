@@ -25,7 +25,7 @@ import AddProduct from "./Components/AddProduct";
 {
   /* this component for add product */
 }
-import Pending from "./Components/pending";
+import Pending from "./Components/Pending";
 {
   /* this component wite admin accepted */
 }
