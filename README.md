@@ -1,36 +1,65 @@
-<h1>Front End<h1>
+# Food_Free-Backend:
 
-<h4>
+# The Main Idea from Project:
+### The main idea of the project:
+The idea of the project is a search for the barcode number, and the result of the search shows us whether this product causes allergies or not For example, a person with gluten sensitivity and wanted to search for whether this bread is gluten-free, so he writes the barcode of the product and displays a result of whether it is free or not.
 
-الفكرة الأساسية للمشروع :
-<br/>
-فكرة المشروع هو عبارة عن بحث باركود ونتيجة البحث يظهر لنا هل هذا المنتج مسبب للحساسية أو لا
-مثلا شخص مصاب بحساسية القلوتين واراد أن يبحث عن هل هذا الخبز خالي من القلوتين فيكتب الباركود الخاص بالمنتج وتعرض له نتيجة هل هو خالي أم لا
+## -The Members are Samar:  Abdulmalik: https://github.com/Abdulmalik055. and https://github.com/samar897 
 
-تفاصيل المشروع :
-1- صفحة الرئيسية وفي هذه الصفحة يستطيع اليوزر الغير مسجل يبحث مباشرة بدون تسجيل وإذا أراد يسجل من أجل المميزات يسجل مباشرة
+# 11 page 
+- page homepage 
+- page for Register user 
+- page for Login user
+- page for login admin
+- page for Community
+- page for communityUpdate
+- page for profile
+- page for update profile
+- page for user to add product
+- page for admin  to  add Product
+- page for stores
+- page for pending product from admin
+ 
+## this is homepage 
 
-2- صفحة تسجيل مستخدم جديد وصفحة تسجيل دخول  
-وتكون تعبية البيانات في التسجيل  
-اسم المستخدم
-كلمة المرور
-ايميل
-هل انت مصاب في الحساسية : نعم أو لا
-ثم تظهر له قائمة الحساسيات : مثل القلوتين ، الجالكوز ، الحليب . ويستطيع أن يختار أكثر من خيار بعد ما يسجل ينتقل لصفحة الرئيسية
+<img src="/src/assets/homepage.png" width="800" height="500">
 
-3- وصفحة رئيسية يكون عبارة عن سيرش رقم الباركود وفوقها تاب عن أنواع الحساسية واذا انتقل المسجل إلى الصفحة الرئيسية تظهر له نتائج المنتجات التي اختارها اثناء التسجيل تحت خان البحث وتحت خانة البحث تعرض له المنتجات المناسبة له نتيجة لاختياره للحساسية المصاب بها اثناء التسجيل
 
-4- وصفحة ملف شخصي لكل مستخدم وهناك يحصل على سجل البحث أي كل سجل باركود بحث عنه في السابق وباستطاعته أن يفضل أي منتج مع رقم الباركود بحيث لو كان هناك تحديث عن المنتج المفضل يأتيه تنبيه
-مثلا : "حالته السابقة بأنه خالي من القلوتين ثم اصبح غير خالي يأتيه تنبيه عن تغير حالة المنتج"
-وأيضا باستطاعة في الملف الشخصي أن لتعديل على البيانات الشخصية
 
-5- صفحة طلب منتج من قبل المستخدم لو كان هناك منتج غير موجود وخالي مثلا من القمح باستطاعة ارسال طلب للمسؤول
+## this is login page 
 
-6- صفحة قبول المنتجات من قبل المسؤول وتظهر له جميع الطلبات التي سبق ارسالها من قبل المستخدمين لإضافة منتج أو تغير الحالة من خالي إلى غير خالي أو العكس
+<img src="/src/assets/login" width="800" height="500">
 
-7- صفحة مجتمع خاص داخل الموقع : ويكون هناك مشاركة بعض المواضيع ومناقشتها مثل لو أن هناك وصفة غذاء عند مستخدم ما باستطاعة مشاركتها في هذه الصفحة وباستطاعة المستخدمين الاخرين الأعجاب بالموضوع أو تصويت لأعلى وأيضا الرد ومناقشة الموضوع
+## this is register page 
+<img src="/src/assets/register" width="800" height="500">
 
-8- نضيف صفحة خاصة مع اللوكيشن للمتاجر القلوتين فري مثل "متجر خبز الخالي والدانوب يوجد لديهم ركن خاص للقلوتين فري "
-#### Backend Side : https://food-free.onrender.com/ and https://github.com/samar897/Food_Free-Backend. 
+## this is is card in homepage 
+<img src="/src/assets/cardPage" width="800" height="500">
 
-</h4>
+## this is addProduct
+<img src="/src/assets/addProduct" width="800" height="500">
+
+
+## this is pending
+<img src="/src/assets/pending" width="800" height="500">
+
+## this is profile
+<img src="/src/assets/profile" width="800" height="500">
+
+
+# This is a brief description of My project.
+### react - html - css - javascript - chakra ui 
+
+
+# back End Side : https://github.com/samar897/Food_Free-Backend
+
+
+
+
+
+
+
+
+
+
+
