@@ -62,8 +62,6 @@ function Pending() {
                   rowID={item._id}
                   productName={item.Food_Free_Name}
                   productNumber={item.FoodDescription}
-                  accept={'accept'}
-                  deny={'deny'}
                   data={item}
                 />
 

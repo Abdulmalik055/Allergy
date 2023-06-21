@@ -55,10 +55,10 @@ function PendingRow(props) {
       <Td>{props.productNumber}</Td>
       <Td>
         <ButtonGroup variant="outline" spacing="6">
-          <Button id={props.accept} colorScheme="blue" onClick={update}>
+          <Button id='accept' colorScheme="blue" onClick={update}>
             قبول
           </Button>
-          <Button id={props.deny} colorScheme="red" onClick={update}>
+          <Button id='deny' colorScheme="red" onClick={update}>
             رفض
           </Button>
           <Button colorScheme="red" onClick={handleDelete}>

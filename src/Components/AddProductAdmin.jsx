@@ -38,7 +38,7 @@ function AddProductAdmin() {
         }
       );
       if (response.data.Data) {
-        Navigate("/");
+        Navigate("/pending");
       }
     } catch (error) {
       console.error("Error submitting form data:", error);
