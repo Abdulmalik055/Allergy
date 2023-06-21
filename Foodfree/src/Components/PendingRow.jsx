@@ -1,11 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useNavigate, useEffect } from 'react';
 import { Tr, Td, ButtonGroup, Button } from '@chakra-ui/react';
 import axios from 'axios'
 
 function PendingRow(props) {
   const Navigate = useNavigate()
-
+  const [data, setData] = useState([]); 
 
     async function update(e){
         let RequestStatus = false
@@ -29,10 +29,10 @@ function PendingRow(props) {
     }
 
     const handleDelete = (id) => {
-      console.log(props.id +"cc");
-      const id2 = props.id;
-      
-       axios.delete(`http://localhost:8000/FoodFreeRouter/DeleteFoodFree/${id2}`,{
+      //const splitId = id.target.id.split('_')
+      //  const id2 = splitId[1]
+
+       axios.delete(`http://localhost:8000/FoodFreeRouter/DeleteFoodFree/${props.data._id}`,{
         headers: {
           // return { Authorization: 'Bearer ' + user.accessToken };
          authorization: 'Bearer '+  localStorage.getItem("token"),
@@ -42,16 +42,9 @@ function PendingRow(props) {
         console.log("Deleted item", res);
         setData(data.filter((item) => item.id !== id));
       });
-      Navigate(`/read`)
+      Navigate(`/pending`)
     };
   
-  
-      useEffect(() => {
-        console.log(localStorage.getItem("id"));
-        setID(localStorage.getItem("id"))
-        
-  
-    }, [])
 
   return (
     <Tr>
