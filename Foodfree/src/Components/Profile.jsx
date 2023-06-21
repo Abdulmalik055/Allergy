@@ -15,11 +15,9 @@ function Profile() {
           <form>
             <h1>الملف الشخصي</h1>
             <label>الاسم المستخدم : </label>
-            <h2>username</h2>
-            <label>كلمة المرور : </label>
-            <h2>fffffffffwe13</h2>
+            <h2>{window.localStorage.getItem("FullUserName")}</h2>
             <label>الإيميل الالكتروني :</label>
-            <h2>username@gmail.com</h2>
+            <h2>{window.localStorage.getItem("UserEmail")}</h2>
             <div className="selecter">
               هل أنت مصاب بحساسية :<h2>نعم</h2>
             </div>

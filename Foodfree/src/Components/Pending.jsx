@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useNavigate } from 'react';
 import {
   // Box,
   TableContainer,
@@ -62,8 +62,10 @@ function Pending() {
                   key={index}
                   productName={item.Food_Free_Name}
                   productNumber={item.FoodDescription}
-                  accept={'accept_'+item._id}
-                  deny={'deny_'+item._id}
+                  accept={'accept'}
+                  deny={'deny'}
+                  dele={'dele'}
+                  id={item._id}
                   data={item}
                 />
               </div>

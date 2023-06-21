@@ -39,7 +39,7 @@ function LoginAdmin() {
       <div>
         <div className="registerParent">
           <form onSubmit={submit} className="register">
-            <h1>تسجيل دخول</h1>
+            <h1>تسجيل دخول </h1>
 
             <label>الإيميل الالكتروني :</label>
             <input

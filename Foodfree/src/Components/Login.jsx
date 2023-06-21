@@ -21,6 +21,7 @@ function Login() {
       localStorage.setItem('FullUserName' ,res.data.user.FullUserName)
       localStorage.setItem('UserEmail', res.data.user.UserEmail)
       localStorage.setItem('id', res.data.user._id)
+      localStorage.setItem('')
       console.log(res.data.user._id);
       console.log(res.data.user.UserEmail);
       
