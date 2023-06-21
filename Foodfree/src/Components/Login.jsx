@@ -6,28 +6,31 @@ function Login() {
 
   const [UserPassword, setPassword] = useState("");
   const [UserEmail, setEmail] = useState("");
+  const [login, setLogin] = useState(localStorage.getItem("loged") === 'true')
 
   function submit(event) {
     event.preventDefault();
     axios.post("https://food-free.onrender.com/UserRouter/Userlogin",{
-        UserPassword,
-        UserEmail,
-      })
-      .then((res) => {
-        console.log(res);
-        localStorage.removeItem('token')
-        localStorage.setItem('token', res.data.token)
-        localStorage.setItem('FullUserName' ,res.data.user.FullUserName)
-        localStorage.setItem('UserEmail', res.data.user.UserEmail)
-        localStorage.setItem('id', res.data.user._id)
-        console.log(res.data.user._id);
-        console.log(res.data.user.UserEmail);
-        
-        if(res.data.user._id){
-          Navigate("/");
-        }else{
-
+      UserPassword,
+      UserEmail,
+    })
+    .then((res) => {
+      console.log(res);
+      localStorage.removeItem('token')
+      localStorage.setItem('token', res.data.token)
+      localStorage.setItem('FullUserName' ,res.data.user.FullUserName)
+      localStorage.setItem('UserEmail', res.data.user.UserEmail)
+      localStorage.setItem('id', res.data.user._id)
+      console.log(res.data.user._id);
+      console.log(res.data.user.UserEmail);
+      
+      if(res.data.user._id){
+        Navigate("/");
+        setLogin(true)
         }
+        // else{
+
+        // }
       }).catch((err) => {
         console.log('1');
         document.getElementById('userNotFound').style.display = 'block'
@@ -62,7 +65,7 @@ function Login() {
             />
 
             <div className="submit_btn">
-              <button>دخول</button>
+              <button >دخول</button>
               <p id="userNotFound">معلومات التسجيل خاطئه</p>
             </div>
             <p>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
-function AddProduct() {
+function AddProductAdmin() {
   const Navigate = useNavigate();
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
@@ -23,22 +23,22 @@ function AddProduct() {
       .map(([allergen, _]) => allergen);
   
 
-    const header = `Authorization:Bearer ${localStorage.getItem('token')}`
-    try {
-      const response = await axios.post("https://food-free.onrender.com/UserRouter/RequestFoodFree", {
-        Food_Free_Name: productName,
-        FoodDescription: productDescription,
-        AllergyStatus: isAllergic,
-        FoodType: checkedAllergens,
-      },{
-        headers: {Authorization:header},
-      });
-      if(response.data.Data){
-        Navigate("/");
+      const header = `Authorization:Bearer ${localStorage.getItem('token')}`
+      try {
+        const response = await axios.post("https://food-free.onrender.com/FoodFreeRouter/AddnewFoodFree", {
+          Food_Free_Name: productName,
+          FoodDescription: productDescription,
+          AllergyStatus: isAllergic,
+          FoodType: checkedAllergens,
+        },{
+          headers: {Authorization:header},
+        });
+        if(response.data.Data){
+          Navigate("/");
+        }
+      } catch (error) {
+        console.error("Error submitting form data:", error);
       }
-    } catch (error) {
-      console.error("Error submitting form data:", error);
-    }
   };
 
   const handleAllergenChange = (e) => {
@@ -119,4 +119,4 @@ function AddProduct() {
   );
 }
 
-export default AddProduct;
+export default AddProductAdmin;

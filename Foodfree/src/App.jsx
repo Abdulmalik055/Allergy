@@ -14,6 +14,7 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
+import LoginAdmin from './Components/LoginAdmin'
 import Homepage from "./Components/Homepage";
 import Stores from "./Components/Stores";
 {
@@ -46,6 +47,7 @@ function App() {
       {/* =========== || all Routes || =========== */}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
+        <Route path="loginAdmin" element={<LoginAdmin/>}></Route>
         <Route path="community" element={<Community />}></Route>
         <Route path="communityUpdate" element={<NewSub />}></Route>
         <Route path="profile" element={<Profile />}></Route>

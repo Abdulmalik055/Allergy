@@ -1,77 +1,38 @@
-
+import React from 'react';
 import { Tr, Td, ButtonGroup, Button } from '@chakra-ui/react';
-import axios from 'axios';
-import { Link, useNavigate} from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import axios from 'axios'
 
 function PendingRow(props) {
+    async function update(e){
+        let RequestStatus = false
+        console.log(props.data);
 
-  const navigat = useNavigate()
-    const [id , setID] = useState([])
-    const [RequestStatus , setRequestStatus]=useState("")
-
-    const [data, setData] = useState([]);   
-
-    
-  const handleDelete = (id) => {
-    console.log(props.id +"cc");
-    const id2 = props.id;
-    
-     axios.delete(`https://food-free.onrender.com/FoodFreeRouter/DeleteFoodFree/${id2}`,{
-      headers: {
-        // return { Authorization: 'Bearer ' + user.accessToken };
-       authorization: 'Bearer '+  localStorage.getItem("token"),
-      
-     },
-    }).then((res) => {
-      console.log("Deleted item", res);
-      setData(data.filter((item) => item.id !== id));
-    });
-    navigat(`/read`)
-  };
-
-
-    useEffect(() => {
-      console.log(localStorage.getItem("id"));
-      setID(localStorage.getItem("id"))
-      
-
-  }, [])
-
-  const upDateData = async()=>{
-    setRequestStatus("true");
-    console.log(props.id +"cc");
-    const id2 = props.id;
-await axios.post(`https://food-free.onrender.com/FoodFreeRouter/FoodFreeUpdate/${id2}`, {
-
-headers: {
-  // return { Authorization: 'Bearer ' + user.accessToken };
- authorization: 'Bearer '+  localStorage.getItem("token"),
-
-}
-}
-,
-{
-  RequestStatus,
-})
-console.log("update");
-navigat("/read")
-  }
+        if(e.target.id.startsWith('accept')){
+            RequestStatus = true
+        }
+        const header = `Authorization:Bearer ${localStorage.getItem('token')}`
+        const splitId = e.target.id.split('_')
+        const id = splitId[1]
+        const res = await axios.post(`https://food-free.onrender.com/FoodFreeRouter/FoodFreeUpdate/${props.data._id}`,{
+            Food_Free_Name:props.data.Food_Free_Name,
+            FoodDescription:props.data.FoodDescription,
+            FoodType:props.data.FoodType,
+            AllergyStatus:props.data.AllergyStatus,
+            RequestStatus
+        },{
+            headers: {Authorization:header},
+          })
+    }
 
   return (
     <Tr>
-      <Td>{props.id}</Td>
-      <Td>{props.Food_Free_Name}</Td>
-      <Td>{props.FoodDescription}</Td>
-      <Td>{props.FoodType}</Td>
-      <Td>{props.AllergyStatus}</Td>
-      
+      <Td>{props.productName}</Td>
+      <Td>{props.productNumber}</Td>
       <Td>
-      <ButtonGroup variant="outline" spacing="6">
-      <Button colorScheme="blue" onClick={upDateData}>قبول</Button>
-     
-      <Button colorScheme="red" onClick={handleDelete}>رفض</Button>
-    </ButtonGroup>
+        <ButtonGroup variant="outline" spacing="6">
+          <Button id={props.accept} colorScheme="blue" onClick={update}>قبول</Button>
+          <Button id={props.deny} colorScheme="red" onClick={update}>رفض</Button>
+        </ButtonGroup>
       </Td>
     </Tr>
   );

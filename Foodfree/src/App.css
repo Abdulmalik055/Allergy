@@ -229,6 +229,11 @@ nav a:hover {
   color: #a4993f;
 }
 
+.btn-logout {
+  background-color: red;
+  color: white;
+}
+
 .profileParent {
   display: flex;
   justify-content: center;
