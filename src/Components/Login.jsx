@@ -7,7 +7,16 @@ function Login() {
   const [UserPassword, setPassword] = useState("");
   const [UserEmail, setEmail] = useState("");
   // const [login, setLogin] = useState(localStorage.getItem("loged") === 'true')
-
+  function handelLogout() {
+    localStorage.removeItem("id");
+    localStorage.removeItem("token");
+    localStorage.removeItem("FullUserName");
+    localStorage.removeItem("UserEmail");
+    localStorage.removeItem('FullAdminName')
+    localStorage.removeItem('AdminEmail')
+    localStorage.removeItem('id')
+    Navigate("/login");
+  }
   function submit(event) {
     event.preventDefault();
     axios.post("https://food-free.onrender.com/UserRouter/Userlogin",{
@@ -27,20 +36,17 @@ function Login() {
       console.log(res.data.user.UserEmail);
       
       if(res.data.user._id){
+        const btnLogout = document.createElement('button')
+        btnLogout.onclick = handelLogout.bind()
+        btnLogout.className = 'btn-logout'
+        btnLogout.textContent = 'تسجيل الخروج'
+        document.getElementById('notLoggedIn').replaceWith(btnLogout)
         Navigate("/");
-        const btnLogged = document.createElement('button')
-        btnLogged.onclick = handelLogout.bind()
-        btnLogged.className = 'btn-logout' 
-        document.getElementById('notLoggedIn').replaceWith(btnLogged)
         
 
-        // <button onClick={handelLogout} className="btn-logout"> Logout </button>
 
-        // setLogin(true)
         }
-        // else{
 
-        // }
       }).catch((err) => {
         console.log('1');
         document.getElementById('userNotFound').style.display = 'block'
