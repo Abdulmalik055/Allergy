@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "dev": "cd Foodfree &&npm run dev"
+    }
+}

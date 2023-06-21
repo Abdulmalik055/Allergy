@@ -16,7 +16,7 @@ header {
   display: flex;
   background: #e9e8e8;
   height: 5rem;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   box-shadow: 0 0 30px #8888888d;
 }
 
@@ -556,7 +556,7 @@ footer {
   font-size: 0.78rem;
   box-shadow: 0 0 30px #8888888d;
 
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 footer .terms {
