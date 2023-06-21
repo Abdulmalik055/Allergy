@@ -28,23 +28,23 @@ The idea of the project is a search for the barcode number, and the result of th
 
 ## this is login page 
 
-<img src="/src/assets/login" width="800" height="500">
+<img src="/src/assets/login.png" width="800" height="500">
 
 ## this is register page 
-<img src="/src/assets/register" width="800" height="500">
+<img src="/src/assets/register.png" width="800" height="500">
 
 ## this is is card in homepage 
-<img src="/src/assets/cardPage" width="800" height="500">
+<img src="/src/assets/cardPage.png" width="800" height="500">
 
 ## this is addProduct
-<img src="/src/assets/addProduct" width="800" height="500">
+<img src="/src/assets/addProduct.png" width="800" height="500">
 
 
 ## this is pending
-<img src="/src/assets/pending" width="800" height="500">
+<img src="/src/assets/pending.png" width="800" height="500">
 
 ## this is profile
-<img src="/src/assets/profile" width="800" height="500">
+<img src="/src/assets/profile.png" width="800" height="500">
 
 
 # This is a brief description of My project.
