@@ -21,7 +21,7 @@ import AddProductAdmin from "./Components/AddProductAdmin";
 {
   /* this component for Location Stores*/
 }
-import AddProduct from "./Components/addProduct";
+import AddProduct from "./Components/AddProduct";
 {
   /* this component for add product */
 }
