@@ -74,7 +74,7 @@ function Login() {
             />
             <label>كلمة المرور : </label>
             <input
-              type="text"
+              type="password"
               placeholder="كلمة المرور ..."
               value={UserPassword}
               onChange={(e) => setPassword(e.target.value)}
